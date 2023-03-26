@@ -12,6 +12,7 @@
     --silver:#A8BFC9;
     --silver-hover:#DBE8ED;
     --grey:#A8A8A8;
+    --black:#000000;
 }
 
 body{
@@ -468,6 +469,16 @@ body{
     padding:61px 0;
     gap:24px;
     background-color: var(--semi-dark-navy);
+}
+
+.hover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display:none;
+    background-color: var(--black);
+    opacity:0.5;
+    top:0px;
 }
 
 .player-1-win{
