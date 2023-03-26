@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    <title>
+        tic-tac-toe page
+    </title>
+</head>
+
+<body>
+    <section class="main-div">
+        <!--game menu-->
+        <svg id="both-logo" width="72" height="32" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fill-rule="evenodd">
+                <path
+                    d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z"
+                    fill="#31C3BD" />
+                <path
+                    d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z"
+                    fill="#F2B137" fill-rule="nonzero" />
+            </g>
+        </svg>
+        <section id="top-section">
+            <h3>
+                PICK PLAYER 1’S MARK
+            </h3>
+            <div class="pick-logo">
+                <div id="xo">
+                    <button class="btn-logo active" onclick="acvtivateDecision('x')">
+                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="x-svg">
+                            <path
+                                d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z"
+                                fill="#A8BFC9" fill-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <button class="btn-logo" onclick="acvtivateDecision('o')">
+                        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="o-svg">
+                            <path
+                                d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"
+                                fill="#A8BFC9" />
+                        </svg>
+                    </button>
+                </div>
+                <p class="warning">
+                    REMEMBER : X GOES FIRST
+                </p>
+            </div>
+        </section>
+
+        <section id="bottom-section">
+            <button class="knob newgame">
+                NEW GAME (VS CPU)
+            </button>
+            <button class="knob newgameb">
+                NEW GAME (VS PLAYER)
+            </button>
+        </section>
+        <!-- game menu end-->
+    </section>
+
+
+
+    <section class="board-div">
+        <!--game board-->
+        <section class="header-div">
+            <svg width="72" height="32" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" fill-rule="evenodd">
+                    <path
+                        d="M8.562 1.634 16 9.073l7.438-7.439a3 3 0 0 1 4.243 0l2.685 2.685a3 3 0 0 1 0 4.243L22.927 16l7.439 7.438a3 3 0 0 1 0 4.243l-2.685 2.685a3 3 0 0 1-4.243 0L16 22.927l-7.438 7.439a3 3 0 0 1-4.243 0L1.634 27.68a3 3 0 0 1 0-4.243L9.073 16 1.634 8.562a3 3 0 0 1 0-4.243L4.32 1.634a3 3 0 0 1 4.243 0Z"
+                        fill="#31C3BD" />
+                    <path
+                        d="M56.1 0c8.765 0 15.87 7.106 15.87 15.87 0 8.766-7.105 15.871-15.87 15.871-8.765 0-15.87-7.105-15.87-15.87C40.23 7.106 47.334 0 56.1 0Zm0 9.405a6.466 6.466 0 1 0 0 12.931 6.466 6.466 0 0 0 0-12.931Z"
+                        fill="#F2B137" fill-rule="nonzero" />
+                </g>
+            </svg>
+            <div id="turn-div">
+                <img id="icon-x" src="./starter-code/assets/icon-x l.svg" alt="x turn">
+                <img id="icon-o" src="./starter-code/assets/icon-o l.svg" alt="o turn">
+                <span>
+                    TURN
+                </span>
+            </div>
+            <div id="restart">
+                <img src="./starter-code/assets/icon-restart.svg" alt="restart icon">
+            </div>
+        </section>
+
+        <section class="middle-div">
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game">
+            </div>
+            <div class="game-blue">
+                <a> X (YOU) <br> <span> 0 </span> </a>
+            </div>
+            <div class="game-grey">
+                <a> TIES <br> <span> 0 </span> </a>
+            </div>
+            <div class="game-yellow">
+                <a> O (CPU) <br> <span> 0 </span> </a>
+            </div>
+        </section>
+        <!--game board end-->
+        </main>
+
+        <section class="final-result">
+            <div class="x-lose">
+                <!--x play lose-->
+                <div class="result-text">
+                    <h3>
+                        OH NO, YOU LOST…
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-o.svg" alt="o lost">
+                        <a class="anchor-yellow">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="x-won">
+                <!--x play won-->
+                <div class="result-text">
+                    <h3>
+                        YOU WON!
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-x.svg" alt="x won">
+                        <a class="anchor-blue">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="o-lose">
+                <!--o play lose-->
+                <div class="result-text">
+                    <h3>
+                        OH NO, YOU LOST…
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-x.svg" alt="o lose">
+                        <a class="anchor-blue">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="o-won">
+                <!--o player won-->
+                <div class="result-text">
+                    <h3>
+                        YOU WON!
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-o.svg" alt="O won">
+                        <a class="anchor-yellow">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="restart-game">
+                <!--restart match-->
+                <div class="result-text">
+                    <div class="indicator restart">
+                        <a>RESTART GAME?</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button id="cancel">
+                        NO, CANCEL
+                    </button>
+                    <button id="restore">
+                        YES, RESTART
+                    </button>
+                </div>
+            </div>
+
+            <div class="player-1-win" id="player1Win">
+                <!-- player 1 win-->
+                <div class="result-text">
+                    <h3>
+                        PLAYER 1 WINS!
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-o.svg" alt="o lost">
+                        <a class="anchor-yellow">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="player-2-win" id="player1Win">
+                <!-- player 1 win-->
+                <div class="result-text">
+                    <h3>
+                        PLAYER 2 WINS!
+                    </h3>
+                    <div class="indicator">
+                        <img src="./starter-code/assets/icon-x.svg" alt="o lost">
+                        <a class="anchor-blue">TAKES THE ROUND</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+            <div class="round-tied">
+                <!--restart match-->
+                <div class="result-text">
+                    <div class="indicator restart">
+                        <a>ROUND TIED</a>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="quit">
+                        QUIT
+                    </button>
+                    <button class="next-round">
+                        NEXT ROUND
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        <div class="overlay"></div>
+
+        <script src="./script.js"> </script>
+</body>
+
+</html>
