@@ -8,7 +8,7 @@ const restartDiv = document.querySelector('.restart-game'); // Restart game popu
 const restartCancelButton = document.getElementById('cancel'); // Button to cancel restarting the game
 const restartBack = document.getElementById('restore'); // Button to go back to the main menu
 const gameBox = document.querySelectorAll('.game'); // Game squares
-const backgroundHover = document.querySelector('.hover');
+const backgroundHover = document.querySelector('.hover'); //Element used to display the hover effect over the game squares
 
 
 
