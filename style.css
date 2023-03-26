@@ -295,6 +295,7 @@ body{
     background-color: var(--semi-dark-navy);
     border-radius: 10px;
     box-shadow: inset 0px -8px 0px #10212A;
+    cursor: pointer;
 }
 
 
@@ -875,6 +876,7 @@ body{
         background-color: var(--semi-dark-navy);
         border-radius: 15px;
         box-shadow: inset 0px -8px 0px #10212A;
+        cursor: pointer;
     }
 
     .game img{
