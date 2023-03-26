@@ -2,7 +2,7 @@
 const chooseButton = document.querySelectorAll('.btn-logo'); // Buttons to choose X or O
 const mainPage = document.querySelector('.main-div'); // Main page element
 const gamePage = document.querySelector('.board-div'); // Game board element
-const buttonComputer = document.querySelector('.newgame'); // Button to start a new game
+const button2Vs = document.querySelector('.newgameb'); // Button to start a new game
 const restartButton = document.getElementById('restart'); // Button to restart the game
 const restartDiv = document.querySelector('.restart-game'); // Restart game popup element
 const restartCancelButton = document.getElementById('cancel'); // Button to cancel restarting the game
@@ -48,8 +48,7 @@ const restartGame = () => {
     
     restartBack.addEventListener('click', () => {
         restartDiv.style.display = 'none';
-        gamePage.style.display = 'none';
-        mainPage.style.display = 'flex';
+        gamePage.style.display = 'flex';
     })
 }
 
@@ -58,7 +57,7 @@ const restartGame = () => {
 
 // Function to handle selecting the game mode (not shown in this code)
 const chooseGameMode = () =>{
-    buttonComputer.addEventListener('click', () => {
+    button2Vs.addEventListener('click', () => {
         mainPage.style.display = 'none';
         gamePage.style.display = 'flex';
     })
