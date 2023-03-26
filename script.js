@@ -8,7 +8,7 @@ const restartDiv = document.querySelector('.restart-game'); // Restart game popu
 const restartCancelButton = document.getElementById('cancel'); // Button to cancel restarting the game
 const restartBack = document.getElementById('restore'); // Button to go back to the main menu
 const gameBox = document.querySelectorAll('.game'); // Game squares
-
+const backgroundHover = document.querySelector('.hover');
 
 
 
@@ -39,16 +39,19 @@ const acvtivateDecision = (figure) => {
 const restartGame = () => {
     restartButton.addEventListener('click', () =>{
         restartDiv.style.display = 'flex';
+        backgroundHover.style.display = "block";
     })
     
     restartCancelButton.addEventListener('click', () => {
         restartDiv.style.display = 'none';
         gamePage.style.display = 'flex';
+        backgroundHover.style.display = "none";
     })
     
     restartBack.addEventListener('click', () => {
         restartDiv.style.display = 'none';
         gamePage.style.display = 'flex';
+        backgroundHover.style.display = "none";
     })
 }
 
